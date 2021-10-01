@@ -6,41 +6,45 @@ pygame.init()
 FPS = 30
 screen = pygame.display.set_mode((1500, 1000))
 
- #rect(screen, (color), (x , y , width, height))
- #circle(screen, (color), (x c, y c), radius)
- #polygon(screen, (0, 0, 0), [(x1, y1), (x2, y2), (x3, y3)])
+#colors 
+black = (0, 0, 0)
+skyblue = (178, 239, 255)
+green = (0, 232, 87)
+red = (255, 55, 53)
+orange = (255, 206, 25)
+pink = (255, 181, 245)
+skin = (255, 237, 218)
+white = (255, 255, 255)
+blue = (139, 153, 255)
+brown = (155, 27, 0)
 
-#backgr
-rect(screen, (178, 239, 255), (0, 0, 1500, 500)) #sky
-rect(screen, (0, 232, 87), (0, 500, 1500, 500)) #grass
+#background
+rect(screen, skyblue, (0, 0, 1500, 500)) #sky
+rect(screen, green, (0, 500, 1500, 500)) #grass
 #ice cream
-polygon(screen, (255, 206, 25), [(150, 510), (210, 450), (250, 560)])
-circle(screen, (155, 27, 0), (150, 485), 29)
-circle(screen, (255, 55, 53), (190, 455), 29)
-circle(screen, (255, 255, 255), (150, 440), 29)
+polygon(screen, orange, [(150, 510), (210, 450), (250, 560)])
+circle(screen, brown, (150, 485), 29)
+circle(screen, red, (190, 455), 29)
+circle(screen, white, (150, 440), 29)
 #balloon
-line(screen, (0, 0, 0), (1240, 332), (1270, 180), 2)
-polygon(screen, (255, 55, 53), [(1270, 180), (1240, 100), (1325, 130)])
-circle(screen, (255, 55, 53), (1268, 90), 29)
-circle(screen, (255, 55, 53), (1310, 105), 29)
+line(screen, black, (1240, 332), (1270, 180), 2)
+polygon(screen, red, [(1270, 180), (1240, 100), (1325, 130)])
+circle(screen, red, (1268, 90), 29)
+circle(screen, red, (1310, 105), 29)
 #лох слева
-line(screen, (0, 0, 0), (500, 300), (250, 550), 2) #arm left left
-line(screen, (0, 0, 0), (500, 300), (750, 550), 2) #arm left right
-lines(screen, (0, 0, 0), False, [(470, 650), (420, 900), (360, 920)], 2) #leg l l
-lines(screen, (0, 0, 0), False, [(530, 650), (550, 900), (610, 920)], 2) #leg l r
-ellipse(screen, (139, 153, 255), (410, 300, 180, 400)) #body left
+line(screen, black, (500, 300), (250, 550), 2) #arm left
+line(screen, black, (500, 300), (750, 550), 2) #arm right
+lines(screen, black, False, [(470, 650), (420, 900), (360, 920)], 2) #leg left
+lines(screen, black, False, [(530, 650), (550, 900), (610, 920)], 2) #leg right
+ellipse(screen, blue, (410, 300, 180, 400)) #body left
+circle(screen, skin, (500, 250), 75) #башка
 #лох справа
-line(screen, (0, 0, 0), (750, 550), (1000, 330), 2) #arm right left
-lines(screen, (0, 0, 0), False, [(1000, 330), (1150, 430), (1250, 300)], 2) #arm right right
-lines(screen, (0, 0, 0), False, [(950, 700), (950, 900), (890, 910)], 2) #leg r l
-lines(screen, (0, 0, 0), False, [(1050, 700), (1050, 900), (1110, 910)], 2) #leg r r
-polygon(screen, (255, 181, 245), [(1000, 300), (800, 700), (1200, 700)]) #body right 
-circle(screen, (255, 237, 218), (500, 250), 75) #башка слева
-circle(screen, (255, 237, 218), (1000, 250), 75) #башка справа
-
-
-
-
+line(screen, black, (750, 550), (1000, 330), 2) #arm left
+lines(screen, black, False, [(1000, 330), (1150, 430), (1250, 300)], 2) #arm right
+lines(screen, black, False, [(950, 700), (950, 900), (890, 910)], 2) #leg left
+lines(screen, black, False, [(1050, 700), (1050, 900), (1110, 910)], 2) #leg right
+polygon(screen, pink, [(1000, 300), (800, 700), (1200, 700)]) #body right 
+circle(screen, skin, (1000, 250), 75) #башка
 
 pygame.display.update()
 clock = pygame.time.Clock()
